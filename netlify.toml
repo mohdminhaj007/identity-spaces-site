@@ -1,5 +1,6 @@
 # Netlify Configuration for Identity spaces (identityspaces.in)
 [build]
+  base = "."
   publish = "."
 
 [[headers]]
