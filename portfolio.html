@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#712728" />
+  <link rel="icon" type="image/jpeg" href="Favicon.jpg.jpg">
+  <meta name="description" content="Explore selected commercial interior and turnkey fit-out projects by Identity spaces — healthcare clinics, artisan cafes, corporate offices, fine dining, and retail flagships across Kerala." />
+  <meta property="og:title" content="Selected Commercial Projects — Identity spaces" />
+  <meta property="og:description" content="Spaces Designed with purpose. Explore our portfolio of commercial interior and turnkey fit-out projects across Kerala." />
+  <meta property="og:type" content="website" />
+  <title>Selected Commercial Projects | Identity spaces — Commercial Interior &amp; Turnkey Fit-out</title>
+
+  <!-- Google Fonts (HTTPS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN (HTTPS) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: {
+              DEFAULT: '#712728',
+              hover: '#5b1f20',
+              deep: '#481819',
+              tint: '#f5ebeb',
+              light: '#dfb3b5'
+            },
+            base: {
+              DEFAULT: '#e7e6e1',
+              light: '#f4f3f0',
+              dark: '#dad8d1',
+              card: '#dedcd5'
+            },
+            charcoal: {
+              DEFAULT: '#1a1a1a',
+              soft: '#2e2e2e',
+              muted: '#666460'
+            },
+            forest: {
+              DEFAULT: '#153b39',
+              light: '#a6c7bc'
+            },
+            brandgreen: {
+              DEFAULT: '#107c57',
+              hover: '#0c5c40'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Manrope"', '"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+    body {
+      background-color: #e7e6e1;
+      color: #1a1a1a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    ::selection {
+      background-color: #712728;
+      color: #ffffff;
+    }
+    .display-font {
+      font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.04em;
+    }
+    .eyebrow {
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .line-link {
+      position: relative;
+    }
+    .line-link::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: currentColor;
+      transition: width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .line-link:hover::after,
+    .line-link:focus-visible::after {
+      width: 100%;
+    }
+    /* Active indicator for current page in navigation */
+    .nav-active {
+      color: #000000 !important;
+      font-weight: 800 !important;
+      position: relative;
+    }
+    .nav-active::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100% !important;
+      height: 2px;
+      background-color: #000000 !important;
+    }
+
+    .image-zoom {
+      overflow: hidden;
+    }
+    .image-zoom img {
+      transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .image-zoom:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Filter button active styles */
+    .filter-btn {
+      transition: all 0.25s ease-in-out;
+    }
+    .filter-btn.active {
+      background-color: #712728 !important;
+      color: #ffffff !important;
+      border-color: #712728 !important;
+      box-shadow: 0 4px 12px rgba(113, 39, 40, 0.25);
+    }
+
+    /* Interactive Inversion Hover Cards */
+    .portfolio-card {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+    .portfolio-card:hover,
+    .portfolio-card:active {
+      background-color: #712728 !important;
+      color: #ffffff !important;
+      border-color: #712728 !important;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -10px rgba(113, 39, 40, 0.35);
+    }
+    /* When card is hovered, all text and child elements invert to crisp white */
+    .portfolio-card:hover .card-text-invert,
+    .portfolio-card:active .card-text-invert,
+    .portfolio-card:hover h3,
+    .portfolio-card:active h3,
+    .portfolio-card:hover p,
+    .portfolio-card:active p,
+    .portfolio-card:hover span,
+    .portfolio-card:active span,
+    .portfolio-card:hover li,
+    .portfolio-card:active li,
+    .portfolio-card:hover .eyebrow,
+    .portfolio-card:active .eyebrow {
+      color: #ffffff !important;
+    }
+    .portfolio-card:hover .card-border-invert,
+    .portfolio-card:active .card-border-invert {
+      border-color: rgba(255, 255, 255, 0.25) !important;
+    }
+    .portfolio-card:hover .card-badge-invert,
+    .portfolio-card:active .card-badge-invert {
+      background-color: rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+      border-color: rgba(255, 255, 255, 0.35) !important;
+    }
+    /* View Gallery button inside card transitions to WHITE background and PURE BLACK text on hover */
+    .portfolio-card:hover .card-btn-invert,
+    .portfolio-card:active .card-btn-invert {
+      background-color: #ffffff !important;
+      color: #000000 !important;
+      border-color: #ffffff !important;
+    }
+    .portfolio-card:hover .card-btn-invert span,
+    .portfolio-card:active .card-btn-invert span {
+      color: #000000 !important;
+    }
+
+    #progressBar {
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.1s linear;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body id="top" class="antialiased selection:bg-burgundy selection:text-white bg-base text-charcoal">
+
+  <!-- Top Reading Progress Bar -->
+  <div id="progressBar" class="fixed top-0 left-0 right-0 h-[3px] bg-burgundy z-[70] pointer-events-none"></div>
+
+  <!-- Sticky Modern Navigation Bar -->
+  <header class="fixed z-50 top-0 inset-x-0 bg-base/90 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
+    <nav class="max-w-[1540px] mx-auto px-5 sm:px-8 lg:px-12 h-[80px] flex items-center justify-between" aria-label="Main Navigation">
+      <!-- Brand Logo (Logo Primary) -->
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Identity spaces home">
+        <img src="./Logo/Logo Primary.png" alt="Identity spaces — Commercial Interior &amp; Fitout" class="h-12 md:h-14 w-auto object-contain hover:opacity-90 transition">
+      </a>
+
+      <!-- Desktop Navigation Links: Strictly Home, Services, Sectors, About, Portfolio, id homes, Identity Branding, Contact -->
+      <div class="hidden xl:flex items-center gap-6 2xl:gap-8 text-[12.5px] font-semibold tracking-wide text-charcoal">
+        <a class="line-link" href="index.html">Home</a>
+        <a class="line-link" href="index.html#services">Services</a>
+        <a class="line-link" href="index.html#sectors">Sectors</a>
+        <a class="line-link hover:text-burgundy transition" href="about.html" title="About Identity Spaces &amp; Team">About</a>
+        <!-- Active Underline Indicator on portfolio.html -->
+        <a class="nav-active text-black font-bold" href="portfolio.html" aria-current="page" style="color: #000000 !important;">Portfolio</a>
+        <a class="line-link" href="index.html#homes">id homes</a>
+        <a class="line-link" href="index.html#branding">Identity Branding</a>
+        <a class="line-link" href="index.html#contact">Contact</a>
+      </div>
+
+      <!-- Header CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="./Identity-Spaces-Brochure.pdf" download="Identity-Spaces-Brochure.pdf" 
+           class="inline-flex items-center gap-2 border border-charcoal/25 bg-transparent text-charcoal px-4 py-2.5 text-xs font-bold tracking-wider hover:border-burgundy hover:text-burgundy transition"
+           title="Download the official brochure">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Download Brochure</span>
+        </a>
+        <a href="index.html#contact" class="bg-burgundy text-white px-5 py-2.5 text-xs font-bold tracking-wider hover:bg-burgundy-hover transition-colors inline-flex items-center gap-1.5 shadow-sm">
+          <span>Get in Touch</span>
+          
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menuBtn" type="button" class="xl:hidden p-2 text-charcoal hover:text-burgundy focus:outline-none" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg id="hamburgerIcon" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="closeIcon" class="w-7 h-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer Menu: Strictly Home, Services, Sectors, About, Portfolio, id homes, Identity Branding, Contact -->
+    <div id="mobileDrawer" class="hidden xl:hidden border-t border-charcoal/10 bg-base/98 backdrop-blur-lg px-6 py-8 shadow-2xl transition-all">
+      <div class="flex flex-col gap-3 text-sm font-semibold text-charcoal">
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html">Home</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#services">Core Services &amp; Scope</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#sectors">Sectors We Serve</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy font-bold" href="about.html">About</a>
+        <a class="py-2 border-b border-charcoal/10 text-black font-bold underline" href="portfolio.html" aria-current="page" style="color: #000000 !important;">Portfolio (Selected Projects)</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#homes">id homes (Residential)</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#branding">Identity Branding Wing</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#contact">Contact &amp; Studio Location</a>
+        <div class="pt-4 flex flex-col sm:flex-row gap-3">
+          <a href="./Identity-Spaces-Brochure.pdf" download="Identity-Spaces-Brochure.pdf" class="text-center border border-charcoal/30 py-3 text-xs font-bold tracking-wider hover:border-burgundy hover:text-burgundy">
+            Download Spaces Brochure (PDF) ↓
+          </a>
+          <a href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer" class="text-center bg-[#176b52] text-white py-3 text-xs font-bold tracking-wider hover:bg-[#104b3a]">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-[80px]">
+    <!-- 1. Header Banner -->
+    <section class="bg-base-dark border-b border-charcoal/10 py-16 sm:py-24 lg:py-28 relative overflow-hidden">
+      <!-- Subtle architectural geometric accent lines -->
+      <div class="absolute inset-0 opacity-[0.035] pointer-events-none" style="background-image: linear-gradient(#1a1a1a 1px, transparent 1px), linear-gradient(to right, #1a1a1a 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-16 relative z-10">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs font-semibold text-charcoal-muted mb-6 tracking-wide" aria-label="Breadcrumb">
+          <a href="index.html" class="hover:text-burgundy transition">Home</a>
+          <span>/</span>
+          <span class="text-burgundy font-bold">Selected Commercial Projects</span>
+        </nav>
+
+        <div class="grid lg:grid-cols-[62%_38%] gap-10 items-end">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-burgundy/10 border border-burgundy/20 text-burgundy rounded-full text-[10px] font-bold tracking-widest uppercase mb-5">
+              <span class="w-1.5 h-1.5 rounded-full bg-burgundy animate-pulse"></span>
+              Architectural Interior &amp; Turnkey Execution
+            </div>
+            <h1 class="display-font text-[clamp(2.8rem,5.5vw,5.5rem)] font-extrabold leading-[1.02] tracking-tight text-charcoal">
+              Selected Commercial <span class="text-burgundy">Projects.</span>
+            </h1>
+            <p class="mt-6 text-base sm:text-lg text-charcoal-soft font-medium leading-relaxed max-w-2xl">
+              A curated showcase of commercial interior environments across Kerala. We engineer purposeful spaces for specialty clinics, artisan cafes, high-performance corporate offices, fine dining, and retail flagships — transforming brand identity into tangible spatial experiences.
+            </p>
+          </div>
+
+          <!-- Highlight Key Stats -->
+          <div class="bg-base border border-charcoal/15 p-6 sm:p-8 shadow-sm">
+            <p class="eyebrow text-burgundy mb-4">Commercial Typologies</p>
+            <div class="grid grid-cols-2 gap-4 text-xs">
+              <div class="border-l-2 border-burgundy pl-3">
+                <span class="display-font text-2xl font-extrabold text-charcoal block">05</span>
+                <span class="text-charcoal-muted font-semibold">Specialized Typologies</span>
+              </div>
+              <div class="border-l-2 border-burgundy pl-3">
+                <span class="display-font text-2xl font-extrabold text-charcoal block">100%</span>
+                <span class="text-charcoal-muted font-semibold">Turnkey Accountable</span>
+              </div>
+            </div>
+            <div class="mt-6 pt-5 border-t border-charcoal/10 flex items-center justify-between text-xs text-charcoal">
+              <span class="font-medium">Design · MEP · Joinery · Fit-out</span>
+              <span class="font-bold text-burgundy">Calicut &amp; across Kerala</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Interactive Category Filter Tabs -->
+    <section class="sticky top-[80px] z-40 bg-base/95 backdrop-blur-md border-b border-charcoal/10 py-5 transition-all shadow-sm">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-wrap items-center justify-between gap-4">
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 w-full sm:w-auto scrollbar-none" role="tablist" aria-label="Portfolio Category Filters">
+          <button type="button" class="filter-btn active px-4 sm:px-5 py-2.5 text-xs font-bold rounded-full border border-charcoal/20 bg-burgundy text-white whitespace-nowrap shadow-sm" data-category="all" role="tab" aria-selected="true">
+            All Works <span class="ml-1 opacity-75 font-normal">(5)</span>
+          </button>
+          <button type="button" class="filter-btn px-4 sm:px-5 py-2.5 text-xs font-bold rounded-full border border-charcoal/20 bg-transparent text-charcoal hover:border-burgundy hover:text-burgundy whitespace-nowrap" data-category="clinic" role="tab" aria-selected="false">
+            Clinic Interior <span class="ml-1 opacity-60 font-normal">(1)</span>
+          </button>
+          <button type="button" class="filter-btn px-4 sm:px-5 py-2.5 text-xs font-bold rounded-full border border-charcoal/20 bg-transparent text-charcoal hover:border-burgundy hover:text-burgundy whitespace-nowrap" data-category="cafe" role="tab" aria-selected="false">
+            Cafe Interior <span class="ml-1 opacity-60 font-normal">(1)</span>
+          </button>
+          <button type="button" class="filter-btn px-4 sm:px-5 py-2.5 text-xs font-bold rounded-full border border-charcoal/20 bg-transparent text-charcoal hover:border-burgundy hover:text-burgundy whitespace-nowrap" data-category="office" role="tab" aria-selected="false">
+            Office Interior <span class="ml-1 opacity-60 font-normal">(1)</span>
+          </button>
+          <button type="button" class="filter-btn px-4 sm:px-5 py-2.5 text-xs font-bold rounded-full border border-charcoal/20 bg-transparent text-charcoal hover:border-burgundy hover:text-burgundy whitespace-nowrap" data-category="restaurant" role="tab" aria-selected="false">
+            Restaurant Interior <span class="ml-1 opacity-60 font-normal">(1)</span>
+          </button>
+          <button type="button" class="filter-btn px-4 sm:px-5 py-2.5 text-xs font-bold rounded-full border border-charcoal/20 bg-transparent text-charcoal hover:border-burgundy hover:text-burgundy whitespace-nowrap" data-category="outlet" role="tab" aria-selected="false">
+            Outlet Design <span class="ml-1 opacity-60 font-normal">(1)</span>
+          </button>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- 3. Projects Grid -->
+    <section class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-16 py-16 sm:py-20 lg:py-24">
+      <div id="portfolioGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10">
+
+        <!-- 1. AURIS - Clinic Interior (ALL CAPS) -->
+        <article id="auris" data-category="clinic" class="portfolio-card group bg-base-card border border-charcoal/15 overflow-hidden flex flex-col justify-between shadow-sm transition-all duration-300 ease-in-out cursor-pointer rounded-none">
+          <div>
+            <!-- Hero Asset Image -->
+            <div class="relative h-[340px] sm:h-[360px] image-zoom bg-charcoal overflow-hidden">
+              <img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                   src="./Portfolio/Clinic Interior/A Space Designed Around CareA contemporary specialty clinic designed around comfort, clarity, a.webp" 
+                   alt="AURIS - Clinic Interior in Calicut, Kerala">
+              
+              
+              <!-- Badges -->
+              <span class="card-badge-invert absolute top-4 left-4 bg-burgundy text-white text-[10.5px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md">
+                Clinic Interior
+              </span>
+              <span class="card-badge-invert absolute top-4 right-4 text-white text-[11px] font-semibold bg-black/50 px-3 py-1.5 backdrop-blur-sm border border-white/20">
+                Calicut, Kerala
+              </span>
+            </div>
+
+            <!-- Content Area (inverts to crisp white on hover) -->
+            <div class="p-7 sm:p-8">
+              <p class="eyebrow text-burgundy mb-2 card-text-invert">A Space Designed Around Care</p>
+              <h3 class="display-font text-2xl font-bold text-charcoal mb-3 card-text-invert">AURIS - CLINIC INTERIOR</h3>
+              <p class="text-sm text-charcoal-muted leading-relaxed card-text-invert">
+                A contemporary specialty clinic designed around patient comfort, clinical clarity, and trust. Clean hygienic architectural surfaces, warm acoustic paneling, and indirect human-centric lighting come together to balance rigorous healthcare standards with a serene, hospitable ambiance.
+              </p>
+
+              <!-- Scope & Key Features -->
+              <div class="mt-6 pt-5 border-t border-charcoal/10 card-border-invert">
+                <p class="text-xs font-bold uppercase tracking-wider text-charcoal mb-3 card-text-invert">Project Scope &amp; Delivery</p>
+                <ul class="grid grid-cols-2 gap-2 text-xs text-charcoal-soft card-text-invert">
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Consultation Suites
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Specialized Examination
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Acoustic Partitioning
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Medical Grade Joinery
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action Footer -->
+          <div class="p-7 sm:p-8 pt-0">
+            <div class="pt-5 border-t border-charcoal/10 card-border-invert flex items-center justify-between">
+              <span class="text-xs font-bold text-charcoal card-text-invert">Turnkey Delivery: 100%</span>
+              <button type="button" onclick="openProjectModal('auris')" class="card-btn-invert group-hover:bg-white group-hover:text-black inline-flex items-center gap-1.5 bg-burgundy text-white px-4 py-2 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition shadow-sm">
+                <span>View Gallery</span>
+                
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. KAPPI CULTURE - Cafe Interior (ALL CAPS) -->
+        <article id="kappi-culture" data-category="cafe" class="portfolio-card group bg-base-card border border-charcoal/15 overflow-hidden flex flex-col justify-between shadow-sm transition-all duration-300 ease-in-out cursor-pointer rounded-none">
+          <div>
+            <!-- Hero Asset Image -->
+            <div class="relative h-[340px] sm:h-[360px] image-zoom bg-charcoal overflow-hidden">
+              <img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                   src="./Portfolio/KAPPI CULTURE - Cafe Interior/A1.png" 
+                   alt="KAPPI CULTURE - Cafe Interior in Kerala">
+              
+
+              <!-- Badges -->
+              <span class="card-badge-invert absolute top-4 left-4 bg-burgundy text-white text-[10.5px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md">
+                Cafe Interior
+              </span>
+              <span class="card-badge-invert absolute top-4 right-4 text-white text-[11px] font-semibold bg-black/50 px-3 py-1.5 backdrop-blur-sm border border-white/20">
+                Kerala
+              </span>
+            </div>
+
+            <!-- Content Area (inverts to crisp white on hover) -->
+            <div class="p-7 sm:p-8">
+              <p class="eyebrow text-burgundy mb-2 card-text-invert">Artisanal Coffee &amp; Culture</p>
+              <h3 class="display-font text-2xl font-bold text-charcoal mb-3 card-text-invert">KAPPI CULTURE - CAFE INTERIOR</h3>
+              <p class="text-sm text-charcoal-muted leading-relaxed card-text-invert">
+                An authentic artisanal coffee sanctuary celebrating indigenous timber, crafted brass espresso detailing, and ambient warm lighting. Spatial layout is optimized for high-volume barista workflow alongside comfortable communal and intimate banquette seating.
+              </p>
+
+              <!-- Scope & Key Features -->
+              <div class="mt-6 pt-5 border-t border-charcoal/10 card-border-invert">
+                <p class="text-xs font-bold uppercase tracking-wider text-charcoal mb-3 card-text-invert">Project Scope &amp; Delivery</p>
+                <ul class="grid grid-cols-2 gap-2 text-xs text-charcoal-soft card-text-invert">
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Espresso Bar Counter
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Custom Banquette Seating
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Timber Ceiling Elements
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Warm Pendant Lighting
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action Footer -->
+          <div class="p-7 sm:p-8 pt-0">
+            <div class="pt-5 border-t border-charcoal/10 card-border-invert flex items-center justify-between">
+              <span class="text-xs font-bold text-charcoal card-text-invert">Custom Joinery &amp; Build</span>
+              <button type="button" onclick="openProjectModal('kappi')" class="card-btn-invert group-hover:bg-white group-hover:text-black inline-flex items-center gap-1.5 bg-burgundy text-white px-4 py-2 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition shadow-sm">
+                <span>View Gallery</span>
+                
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. L.GO - Office Interior (ALL CAPS) -->
+        <article id="lgo" data-category="office" class="portfolio-card group bg-base-card border border-charcoal/15 overflow-hidden flex flex-col justify-between shadow-sm transition-all duration-300 ease-in-out cursor-pointer rounded-none">
+          <div>
+            <!-- Hero Asset Image -->
+            <div class="relative h-[340px] sm:h-[360px] image-zoom bg-charcoal overflow-hidden">
+              <img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                   src="./Portfolio/L.GO - Office Interior/1.webp" 
+                   alt="L.GO - Office Interior Corporate Workspace">
+              
+
+              <!-- Badges -->
+              <span class="card-badge-invert absolute top-4 left-4 bg-burgundy text-white text-[10.5px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md">
+                Office Interior
+              </span>
+              <span class="card-badge-invert absolute top-4 right-4 text-white text-[11px] font-semibold bg-black/50 px-3 py-1.5 backdrop-blur-sm border border-white/20">
+                Corporate Workspace
+              </span>
+            </div>
+
+            <!-- Content Area (inverts to crisp white on hover) -->
+            <div class="p-7 sm:p-8">
+              <p class="eyebrow text-burgundy mb-2 card-text-invert">High-Performance Workspace</p>
+              <h3 class="display-font text-2xl font-bold text-charcoal mb-3 card-text-invert">L.GO - OFFICE INTERIOR</h3>
+              <p class="text-sm text-charcoal-muted leading-relaxed card-text-invert">
+                A progressive commercial workplace engineered for focus and collaboration. Integrated with acoustic glass demountable partitions, executive boardrooms, structured data/power cabling, and biophilic open desks that encourage modern productivity.
+              </p>
+
+              <!-- Scope & Key Features -->
+              <div class="mt-6 pt-5 border-t border-charcoal/10 card-border-invert">
+                <p class="text-xs font-bold uppercase tracking-wider text-charcoal mb-3 card-text-invert">Project Scope &amp; Delivery</p>
+                <ul class="grid grid-cols-2 gap-2 text-xs text-charcoal-soft card-text-invert">
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Executive Glass Cabins
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Acoustic Ceiling Baffles
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Ergonomic Workstations
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Structured MEP Cabling
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action Footer -->
+          <div class="p-7 sm:p-8 pt-0">
+            <div class="pt-5 border-t border-charcoal/10 card-border-invert flex items-center justify-between">
+              <span class="text-xs font-bold text-charcoal card-text-invert">Corporate Fit-out</span>
+              <button type="button" onclick="openProjectModal('lgo')" class="card-btn-invert group-hover:bg-white group-hover:text-black inline-flex items-center gap-1.5 bg-burgundy text-white px-4 py-2 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition shadow-sm">
+                <span>View Gallery</span>
+                
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. SPICE INN - Restaurant Interior (ALL CAPS) -->
+        <article id="spice-inn" data-category="restaurant" class="portfolio-card group bg-base-card border border-charcoal/15 overflow-hidden flex flex-col justify-between shadow-sm transition-all duration-300 ease-in-out cursor-pointer rounded-none">
+          <div>
+            <!-- Hero Asset Image -->
+            <div class="relative h-[340px] sm:h-[360px] image-zoom bg-charcoal overflow-hidden">
+              <img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                   src="./Portfolio/SPICE INN - Restaurant Interior/Modern Spiceinn Restaurant Exterior.png" 
+                   alt="SPICE INN - Restaurant Interior Fine Dining">
+              
+
+              <!-- Badges -->
+              <span class="card-badge-invert absolute top-4 left-4 bg-burgundy text-white text-[10.5px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md">
+                Restaurant Interior
+              </span>
+              <span class="card-badge-invert absolute top-4 right-4 text-white text-[11px] font-semibold bg-black/50 px-3 py-1.5 backdrop-blur-sm border border-white/20">
+                Fine Dining
+              </span>
+            </div>
+
+            <!-- Content Area (inverts to crisp white on hover) -->
+            <div class="p-7 sm:p-8">
+              <p class="eyebrow text-burgundy mb-2 card-text-invert">Signature Culinary Destination</p>
+              <h3 class="display-font text-2xl font-bold text-charcoal mb-3 card-text-invert">SPICE INN - RESTAURANT INTERIOR</h3>
+              <p class="text-sm text-charcoal-muted leading-relaxed card-text-invert">
+                An immersive dining destination combining emerald teal seating, custom brass geometric partition screens, warm acoustic green louvers, and ambient downlighting. Engineered for exceptional guest acoustics and fluid floor service circulation.
+              </p>
+
+              <!-- Scope & Key Features -->
+              <div class="mt-6 pt-5 border-t border-charcoal/10 card-border-invert">
+                <p class="text-xs font-bold uppercase tracking-wider text-charcoal mb-3 card-text-invert">Project Scope &amp; Delivery</p>
+                <ul class="grid grid-cols-2 gap-2 text-xs text-charcoal-soft card-text-invert">
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Decorative Brass Screens
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Custom Dining Banquettes
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Architectural Facade
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Theatrical Mood Lighting
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action Footer -->
+          <div class="p-7 sm:p-8 pt-0">
+            <div class="pt-5 border-t border-charcoal/10 card-border-invert flex items-center justify-between">
+              <span class="text-xs font-bold text-charcoal card-text-invert">Turnkey Fit-out</span>
+              <button type="button" onclick="openProjectModal('spiceinn')" class="card-btn-invert group-hover:bg-white group-hover:text-black inline-flex items-center gap-1.5 bg-burgundy text-white px-4 py-2 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition shadow-sm">
+                <span>View Gallery</span>
+                
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. STORE 11 - Outlet Design (ALL CAPS) -->
+        <article id="store-11" data-category="outlet" class="portfolio-card group bg-base-card border border-charcoal/15 overflow-hidden flex flex-col justify-between shadow-sm transition-all duration-300 ease-in-out cursor-pointer rounded-none md:col-span-2 lg:col-span-1">
+          <div>
+            <!-- Hero Asset Image -->
+            <div class="relative h-[340px] sm:h-[360px] image-zoom bg-charcoal overflow-hidden">
+              <img loading="lazy" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                   src="./Portfolio/STORE 11 - Outlet Design/1.webp" 
+                   alt="STORE 11 - Outlet Design Flagship Showroom">
+              
+
+              <!-- Badges -->
+              <span class="card-badge-invert absolute top-4 left-4 bg-burgundy text-white text-[10.5px] font-bold uppercase tracking-widest px-3 py-1.5 shadow-md">
+                Outlet Design
+              </span>
+              <span class="card-badge-invert absolute top-4 right-4 text-white text-[11px] font-semibold bg-black/50 px-3 py-1.5 backdrop-blur-sm border border-white/20">
+                Retail Flagship
+              </span>
+            </div>
+
+            <!-- Content Area (inverts to crisp white on hover) -->
+            <div class="p-7 sm:p-8">
+              <p class="eyebrow text-burgundy mb-2 card-text-invert">Modern Customer Retail Journey</p>
+              <h3 class="display-font text-2xl font-bold text-charcoal mb-3 card-text-invert">STORE 11 - OUTLET DESIGN</h3>
+              <p class="text-sm text-charcoal-muted leading-relaxed card-text-invert">
+                An impactful commercial retail destination designed to maximize footfall, merchandise prominence, and brand recall. Features custom vitrine millwork, high-CRI directional spotlights, smooth customer circulation pathways, and bold streetfront architectural presence.
+              </p>
+
+              <!-- Scope & Key Features -->
+              <div class="mt-6 pt-5 border-t border-charcoal/10 card-border-invert">
+                <p class="text-xs font-bold uppercase tracking-wider text-charcoal mb-3 card-text-invert">Project Scope &amp; Delivery</p>
+                <ul class="grid grid-cols-2 gap-2 text-xs text-charcoal-soft card-text-invert">
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> High-CRI Retail Lighting
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Custom Modular Fixtures
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Circulation Planning
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <span class="text-burgundy card-text-invert">›</span> Architectural Storefront
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Action Footer -->
+          <div class="p-7 sm:p-8 pt-0">
+            <div class="pt-5 border-t border-charcoal/10 card-border-invert flex items-center justify-between">
+              <span class="text-xs font-bold text-charcoal card-text-invert">Retail Planning &amp; Build</span>
+              <button type="button" onclick="openProjectModal('store11')" class="card-btn-invert group-hover:bg-white group-hover:text-black inline-flex items-center gap-1.5 bg-burgundy text-white px-4 py-2 text-xs font-bold tracking-wider hover:bg-white hover:text-black transition shadow-sm">
+                <span>View Gallery</span>
+                
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. Consultation Callout Section (Heading strictly updated) -->
+    <section class="bg-burgundy text-white py-16 sm:py-20 lg:py-24 border-t border-charcoal/10 relative overflow-hidden">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-16 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+        <div class="max-w-2xl">
+          <p class="eyebrow text-white/70 mb-3">Turnkey Fit-out Expertise</p>
+          <h2 class="display-font text-3xl sm:text-5xl font-extrabold tracking-tight">
+            Planning a commercial interior
+          </h2>
+          <p class="text-white/85 text-base sm:text-lg mt-4 leading-relaxed font-normal">
+            Whether launching a specialty clinic, flagship retail outlet, corporate office, or dining establishment, our team manages the entire process from conceptual space planning to final handover across Kerala.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+          <a href="index.html#contact" class="bg-white text-burgundy px-8 py-4 text-xs font-bold tracking-wider hover:bg-base transition text-center shadow-lg">
+            Start Your Project
+          </a>
+          <a href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer" class="border border-white/40 text-white px-7 py-4 text-xs font-bold tracking-wider hover:bg-white hover:text-burgundy transition text-center inline-flex items-center justify-center gap-2">
+            <span>WhatsApp Consultation</span>
+            <span aria-hidden="true">💬</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. Clean Professional Studio Footer -->
+  <footer class="bg-charcoal text-white px-6 sm:px-10 lg:px-16 pt-20 pb-10 border-t border-white/10">
+    <div class="max-w-[1540px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/15">
+        <!-- Brand Summary -->
+        <div>
+          <!-- Official Logo in Footer (Logo Primary White) -->
+          <div class="mb-4">
+            <img src="./Logo/Logo Primary White.png" alt="Identity spaces — Commercial Interior &amp; Fitout" class="h-12 md:h-14 w-auto object-contain">
+          </div>
+          <p class="text-white/60 text-sm mt-5 leading-relaxed">
+            Commercial Interior &amp; Turnkey Fit-out Studio.<br>
+            Calicut, Kerala · Serving Kerala.
+          </p>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://www.instagram.com/identity__spaces" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/10 hover:bg-burgundy rounded transition" aria-label="Identity spaces Instagram (@identity__spaces)" title="@identity__spaces">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/id__homes_" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/10 hover:bg-forest rounded transition" aria-label="id homes Instagram (@id__homes_)" title="id homes (@id__homes_)">
+              <svg class="w-4 h-4 fill-current text-forest-light" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="mailto:connect.idspaces@gmail.com" class="p-2.5 bg-white/10 hover:bg-burgundy rounded transition" aria-label="Identity spaces Email">
+              <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Studio Location -->
+        <div>
+          <p class="eyebrow text-burgundy-light mb-4">Studio Office</p>
+          <address class="not-italic text-sm text-white/70 leading-relaxed space-y-1">
+            <p class="text-white font-medium">2nd Floor, AVM Building</p>
+            <p>West Hill, Calicut, Kerala 673005</p>
+            <p class="pt-1">
+              <a href="https://www.google.com/maps/place/identity+spaces/data=!4m7!3m6!1s0x4d56cdc5b748125f:0x7b95e1be429964c7!8m2!3d11.2813576!4d75.7713473!16s%2Fg%2F11ntgs1l5f!19sChIJXxJIt8XNVk0Rx2SZQr7hlXs?authuser=0&hl=en&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1 text-xs text-burgundy-light underline hover:text-white transition">
+                <span>View on Google Maps</span>
+              </a>
+            </p>
+            <p class="pt-2"><a href="tel:+918113815595" class="hover:text-white transition">+91 81138 15595</a></p>
+            <p><a href="tel:+918089112207" class="hover:text-white transition">+91 8089 11 22 07</a></p>
+            <p class="pt-1"><a href="mailto:connect.idspaces@gmail.com" class="text-xs text-burgundy-light underline">connect.idspaces@gmail.com</a></p>
+            <p><a href="mailto:connectidhomes@gmail.com" class="text-xs text-forest-light underline">connectidhomes@gmail.com</a></p>
+            <p><a href="https://www.instagram.com/identity_branding" target="_blank" rel="noopener noreferrer" class="text-xs text-[#a6c7bc] underline hover:text-white transition">@identity_branding</a></p>
+          </address>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <p class="eyebrow text-burgundy-light mb-4">Quick Navigation</p>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li><a class="hover:text-white transition" href="index.html#top">Home</a></li>
+            <li><a class="hover:text-white transition" href="about.html">About</a></li>
+            <li><a class="hover:text-white transition" href="index.html#services">Core Services</a></li>
+            <li><a class="hover:text-white transition" href="index.html#sectors">Commercial Sectors</a></li>
+            <li><a class="hover:text-white transition text-white font-semibold" href="portfolio.html">Commercial Portfolio</a></li>
+            <li><a class="hover:text-white transition" href="./Identity-Spaces-Brochure.pdf" download="Identity-Spaces-Brochure.pdf">Download Spaces Brochure</a></li>
+          </ul>
+        </div>
+
+        <!-- Identity Family -->
+        <div>
+          <p class="eyebrow text-burgundy-light mb-4">Identity Family</p>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li><a class="hover:text-white transition" href="index.html#homes">id homes (Residential)</a></li>
+            <li><a class="hover:text-white transition" href="https://www.instagram.com/id__homes_" target="_blank" rel="noopener noreferrer">id homes Instagram (@id__homes_)</a></li>
+            <li><a class="hover:text-white transition" href="index.html#branding">Identity Branding Wing</a></li>
+            <li><a class="hover:text-white transition" href="https://www.instagram.com/identity_branding" target="_blank" rel="noopener noreferrer">Identity Branding Instagram</a></li>
+            <li><a class="hover:text-white transition" href="./Identity-Branding-Brochure.pdf" download="Identity-Branding-Brochure.pdf">Branding Brochure PDF</a></li>
+            <li><a class="hover:text-white transition" href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer">WhatsApp Consultation</a></li>
+            <li><a class="hover:text-white transition" href="index.html#contact">Studio Location</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50 pt-8">
+        <span>&copy; <span id="year"></span> Identity spaces. All rights reserved.</span>
+        <span class="tracking-wide text-center font-medium">Spaces Designed with purpose</span>
+        <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="hover:text-white transition font-semibold">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 6. Interactive Project Lightbox Modal (Security Hardened without unsafe innerHTML) -->
+  <div id="projectModal" class="fixed inset-0 z-[100] bg-charcoal/90 backdrop-blur-md hidden items-center justify-center p-4 sm:p-6 lg:p-10" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="bg-base max-w-5xl w-full max-h-[92vh] overflow-y-auto border border-charcoal/20 shadow-2xl relative flex flex-col">
+      <!-- Modal Header -->
+      <div class="sticky top-0 bg-base border-b border-charcoal/10 px-6 sm:px-8 py-5 flex items-center justify-between z-10">
+        <div>
+          <span id="modalCategory" class="eyebrow text-burgundy block mb-1">Clinic Interior</span>
+          <h2 id="modalTitle" class="display-font text-2xl sm:text-3xl font-extrabold text-charcoal">Project Title</h2>
+        </div>
+        <button type="button" onclick="closeProjectModal()" class="p-2 text-charcoal hover:text-burgundy border border-charcoal/20 hover:border-burgundy transition rounded-none" aria-label="Close modal">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-6 sm:p-8 space-y-6">
+        <!-- Main Image Display -->
+        <div class="relative bg-charcoal min-h-[300px] sm:min-h-[460px] flex items-center justify-center overflow-hidden border border-charcoal/10">
+          <img id="modalMainImage" class="w-full h-full object-contain max-h-[500px]" src="" alt="Project detail view">
+        </div>
+
+        <!-- Thumbnails Strip -->
+        <div id="modalThumbnails" class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-thin">
+          <!-- Dynamic thumbnails populated safely by JS -->
+        </div>
+
+        <!-- Project Details Description -->
+        <div class="grid lg:grid-cols-[65%_35%] gap-8 pt-4 border-t border-charcoal/10">
+          <div>
+            <h3 class="display-font text-xl font-bold text-charcoal mb-2">Design Concept &amp; Execution</h3>
+            <p id="modalDescription" class="text-sm text-charcoal-soft leading-relaxed">
+              Description goes here.
+            </p>
+          </div>
+          <div class="bg-base-dark p-5 border border-charcoal/10 space-y-3 text-xs">
+            <div>
+              <span class="eyebrow text-burgundy block mb-1">Location</span>
+              <span id="modalLocation" class="font-bold text-charcoal block">Kerala</span>
+            </div>
+            <div>
+              <span class="eyebrow text-burgundy block mb-1">Services</span>
+              <span id="modalScope" class="font-bold text-charcoal block">Turnkey Fit-out</span>
+            </div>
+            <div class="pt-3">
+              <a href="index.html#contact" class="w-full bg-burgundy hover:bg-burgundy-hover text-white py-3 px-4 text-xs font-bold tracking-wider text-center block transition shadow-sm">
+                Discuss Similar Project
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Floating WhatsApp Quick Action Button -->
+  <aside aria-label="Quick contact" class="fixed bottom-6 right-6 z-40">
+    <a href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer" 
+       class="flex items-center gap-2 bg-[#176b52] hover:bg-[#104b3a] text-white px-4 py-3 shadow-xl transition-all hover:scale-105"
+       aria-label="Direct WhatsApp message with Identity spaces design studio">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.861.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.203c.044.072.044.419-.1.824z"/>
+      </svg>
+      <span class="text-xs font-bold tracking-wider">WhatsApp</span>
+    </a>
+  </aside>
+
+  <!-- Interactive Client-side Script -->
+  <script>
+    // 1. Mobile Menu Drawer Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    if (menuBtn && mobileDrawer) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileDrawer.classList.contains('hidden');
+        if (isOpen) {
+          mobileDrawer.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileDrawer.classList.remove('hidden');
+          hamburgerIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // 2. Reading Progress Bar
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      const progress = total > 0 ? (window.scrollY / total) : 0;
+      const bar = document.getElementById('progressBar');
+      if (bar) bar.style.transform = `scaleX(${progress})`;
+    }, { passive: true });
+
+    // 3. Category Filter Tabs Functionality
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.portfolio-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('active');
+          b.classList.remove('bg-burgundy', 'text-white');
+          b.classList.add('bg-transparent', 'text-charcoal');
+          b.setAttribute('aria-selected', 'false');
+        });
+
+        btn.classList.add('active');
+        btn.classList.add('bg-burgundy', 'text-white');
+        btn.classList.remove('bg-transparent', 'text-charcoal');
+        btn.setAttribute('aria-selected', 'true');
+
+        const category = btn.getAttribute('data-category');
+
+        projectCards.forEach(card => {
+          const cardCategory = card.getAttribute('data-category');
+          if (category === 'all' || cardCategory === category) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // 4. Project Modal Data & Lightbox (All Titles ALL CAPS & Verified Non-broken Asset Arrays)
+    const projectData = {
+      auris: {
+        title: "AURIS - CLINIC INTERIOR",
+        category: "Clinic Interior · Healthcare & Wellness",
+        location: "Calicut, Kerala",
+        scope: "Architectural Planning, Clinical Lighting, Acoustic Partitioning & Turnkey Fit-out",
+        description: "A contemporary specialty clinic designed around patient comfort, clinical clarity, and trust. The space integrates hygienic, durable medical surfaces with warm timber paneling and indirect architectural luminaires that reduce clinical anxiety. Precision examination suites and peaceful consultation rooms maintain optimal acoustic privacy for sensitive consultations.",
+        images: [
+          "./Portfolio/Clinic Interior/A Space Designed Around CareA contemporary specialty clinic designed around comfort, clarity, a.webp",
+          "./Portfolio/Clinic Interior/A Space Designed Around CareA contemporary specialty clinic designed around comfort, clarity, a (1).webp",
+          "./Portfolio/Clinic Interior/Designed for Focus & ComfortA consultation space where functionality meets a sense of calm. Cle.webp",
+          "./Portfolio/Clinic Interior/Designed for Focus & ComfortA consultation space where functionality meets a sense of calm. Cle (2).webp",
+          "./Portfolio/Clinic Interior/Precision Meets ComfortThe examination room balances the technical requirements of a specialty .webp"
+        ]
+      },
+      kappi: {
+        title: "KAPPI CULTURE - CAFE INTERIOR",
+        category: "Cafe Interior · Food & Beverage",
+        location: "Kerala",
+        scope: "Concept Design, Custom Joinery, Banquette Seating, Espresso Bar Execution",
+        description: "An authentic artisanal coffee destination celebrating regional Kerala timber, tactile brushed brass accents, and evocative ambient lighting. The layout balances high-traffic front-of-house barista speed with welcoming communal tables and intimate banquette niches engineered for comfortable customer dwell time.",
+        images: [
+          "./Portfolio/KAPPI CULTURE - Cafe Interior/A1.png",
+          "./Portfolio/KAPPI CULTURE - Cafe Interior/A2.png",
+          "./Portfolio/KAPPI CULTURE - Cafe Interior/A3.png",
+          "./Portfolio/KAPPI CULTURE - Cafe Interior/A4.png",
+          "./Portfolio/KAPPI CULTURE - Cafe Interior/A5.png",
+          "./Portfolio/KAPPI CULTURE - Cafe Interior/A6.png"
+        ]
+      },
+      lgo: {
+        title: "L.GO - OFFICE INTERIOR",
+        category: "Office Interior · Workplace Architecture",
+        location: "Corporate Workspace",
+        scope: "Space Planning, Demountable Acoustic Glass, Executive Boardrooms, Structured Cabling",
+        description: "A high-performance corporate workspace engineered to enhance productivity, seamless communication, and team focus. Features double-glazed acoustic cabins for executive privacy, structured floor and raceway cabling for zero wire clutter, and biophilic natural wood breakout zones.",
+        images: [
+          "./Portfolio/L.GO - Office Interior/1.webp",
+          "./Portfolio/L.GO - Office Interior/2.png",
+          "./Portfolio/L.GO - Office Interior/3.png",
+          "./Portfolio/L.GO - Office Interior/6.png",
+          "./Portfolio/L.GO - Office Interior/9.png",
+          "./Portfolio/L.GO - Office Interior/11.png",
+          "./Portfolio/L.GO - Office Interior/14.png",
+          "./Portfolio/L.GO - Office Interior/15.png",
+          "./Portfolio/L.GO - Office Interior/17.png",
+          "./Portfolio/L.GO - Office Interior/18.png"
+        ]
+      },
+      spiceinn: {
+        title: "SPICE INN - RESTAURANT INTERIOR",
+        category: "Restaurant Interior · Hospitality & Dining",
+        location: "Kerala",
+        scope: "Architectural Interior & Exterior, Custom Brass Louvers, Lighting Design & Turnkey Fit-out",
+        description: "An evocative culinary destination pairing deep emerald teal banquette upholstery with bespoke geometric brass partitions and acoustic green ceiling louvers. The lighting scheme incorporates subtle dimmable fixtures to transition smoothly from daytime dining to intimate evening ambiance.",
+        images: [
+          "./Portfolio/SPICE INN - Restaurant Interior/Modern Spiceinn Restaurant Exterior.png",
+          "./Portfolio/SPICE INN - Restaurant Interior/Modern Teal and Brass Restaurant Interior.png",
+          "./Portfolio/SPICE INN - Restaurant Interior/Modern Cafe Seating with Teal Chairs and Brass Screens.png",
+          "./Portfolio/SPICE INN - Restaurant Interior/Modern Cafe with Gold Screens and Teal Seating.png",
+          "./Portfolio/SPICE INN - Restaurant Interior/Warm Modern Cafe Booths with Green Louvers.png",
+          "./Portfolio/SPICE INN - Restaurant Interior/Warm Modern Restaurant Interior with Teal Seating.png"
+        ]
+      },
+      store11: {
+        title: "STORE 11 - OUTLET DESIGN",
+        category: "Outlet Design · Retail & Brand Flagship",
+        location: "Commercial Flagship",
+        scope: "Retail Strategy, Façade Architecture, Custom Vitrine Joinery & High-CRI Luminaires",
+        description: "A forward-thinking commercial retail flagship designed to optimize customer pathways and product focus. Custom modular vitrines and precision display niches are illuminated by high-CRI spotlights ensuring authentic fabric and texture presentation, backed by a striking architectural shopfront.",
+        images: [
+          "./Portfolio/STORE 11 - Outlet Design/1.webp",
+          "./Portfolio/STORE 11 - Outlet Design/A (3).png",
+          "./Portfolio/STORE 11 - Outlet Design/A (5).png",
+          "./Portfolio/STORE 11 - Outlet Design/A (6).png",
+          "./Portfolio/STORE 11 - Outlet Design/A (8).png",
+          "./Portfolio/STORE 11 - Outlet Design/A (24).png",
+          "./Portfolio/STORE 11 - Outlet Design/F (1).png",
+          "./Portfolio/STORE 11 - Outlet Design/F (6).png"
+        ]
+      }
+    };
+
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalCategory = document.getElementById('modalCategory');
+    const modalLocation = document.getElementById('modalLocation');
+    const modalScope = document.getElementById('modalScope');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalMainImage = document.getElementById('modalMainImage');
+    const modalThumbnails = document.getElementById('modalThumbnails');
+
+    window.openProjectModal = function(projectId) {
+      const project = projectData[projectId];
+      if (!project) return;
+
+      modalTitle.textContent = project.title;
+      modalCategory.textContent = project.category;
+      modalLocation.textContent = project.location;
+      modalScope.textContent = project.scope;
+      modalDescription.textContent = project.description;
+      modalMainImage.src = project.images[0];
+      modalMainImage.alt = project.title;
+
+      // Populate Thumbnails safely using DOM nodes
+      modalThumbnails.innerHTML = '';
+      project.images.forEach((imgSrc, idx) => {
+        const thumb = document.createElement('button');
+        thumb.type = 'button';
+        thumb.className = `flex-shrink-0 w-20 h-14 border-2 overflow-hidden transition-all ${idx === 0 ? 'border-burgundy scale-105' : 'border-charcoal/20 opacity-70 hover:opacity-100'}`;
+        
+        const thumbImg = document.createElement('img');
+        thumbImg.src = imgSrc;
+        thumbImg.className = 'w-full h-full object-cover';
+        thumbImg.alt = `${project.title} Thumbnail ${idx + 1}`;
+
+        thumb.appendChild(thumbImg);
+
+        thumb.addEventListener('click', () => {
+          modalMainImage.src = imgSrc;
+          modalThumbnails.querySelectorAll('button').forEach(b => {
+            b.classList.remove('border-burgundy', 'scale-105');
+            b.classList.add('border-charcoal/20', 'opacity-70');
+          });
+          thumb.classList.add('border-burgundy', 'scale-105');
+          thumb.classList.remove('border-charcoal/20', 'opacity-70');
+        });
+        modalThumbnails.appendChild(thumb);
+      });
+
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    };
+
+    window.closeProjectModal = function() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeProjectModal();
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeProjectModal();
+      }
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (hash && Object.prototype.hasOwnProperty.call(projectData, hash)) {
+        openProjectModal(hash);
+      } else if (hash === 'kappi-culture') {
+        openProjectModal('kappi');
+      } else if (hash === 'spice-inn') {
+        openProjectModal('spiceinn');
+      } else if (hash === 'store-11') {
+        openProjectModal('store11');
+      }
+    });
+  </script>
+</body>
+</html>

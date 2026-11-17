@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#712728" />
+  <link rel="icon" type="image/jpeg" href="Favicon.jpg.jpg">
+  <meta name="description" content="Meet the leadership and team behind Identity spaces — Commercial interior design and turnkey fit-out practice based in Calicut, Kerala." />
+  <meta property="og:title" content="About Us — Leadership &amp; Team | Identity spaces" />
+  <meta property="og:description" content="Spaces Designed with purpose. Meet the leadership and creative team delivering turnkey commercial interiors across Kerala." />
+  <meta property="og:type" content="website" />
+  <title>About Us — Leadership &amp; Team | Identity spaces · Calicut, Kerala</title>
+
+  <!-- Google Fonts (HTTPS) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN (HTTPS) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            burgundy: {
+              DEFAULT: '#712728',
+              hover: '#5b1f20',
+              deep: '#481819',
+              tint: '#f5ebeb',
+              light: '#dfb3b5'
+            },
+            base: {
+              DEFAULT: '#e7e6e1',
+              light: '#f4f3f0',
+              dark: '#dad8d1',
+              card: '#dedcd5'
+            },
+            charcoal: {
+              DEFAULT: '#191919',
+              soft: '#2e2e2e',
+              muted: '#666460'
+            },
+            forest: {
+              DEFAULT: '#153b39',
+              light: '#a6c7bc'
+            },
+            brandgreen: {
+              DEFAULT: '#107c57',
+              hover: '#0c5c40'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Manrope"', '"Plus Jakarta Sans"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+    body {
+      background-color: #e7e6e1;
+      color: #191919;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    ::selection {
+      background-color: #712728;
+      color: #ffffff;
+    }
+    .display-font {
+      font-family: 'Manrope', 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: -0.04em;
+    }
+    .eyebrow {
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .line-link {
+      position: relative;
+    }
+    .line-link::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: currentColor;
+      transition: width 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .line-link:hover::after,
+    .line-link:focus-visible::after {
+      width: 100%;
+    }
+    .nav-active {
+      position: relative;
+      color: #712728 !important;
+    }
+    .nav-active::after {
+      content: "";
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #712728;
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    #progressBar {
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform 0.1s linear;
+    }
+
+    /* Team Card Interactive Hover Inversion:
+       Default: #dedcd5 / #e7e6e1 with charcoal text.
+       Hover: Smooth transition to #712728 (burgundy) and all text/badges invert to pure white (#ffffff). */
+    .team-card {
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .team-card:hover {
+      background-color: #712728 !important;
+      box-shadow: 0 20px 35px -10px rgba(113, 39, 40, 0.35);
+      transform: translateY(-4px);
+    }
+    .team-card:hover .team-invert-text,
+    .team-card:hover h3,
+    .team-card:hover p,
+    .team-card:hover span,
+    .team-card:hover .eyebrow {
+      color: #ffffff !important;
+    }
+    .team-card:hover .team-border {
+      border-color: rgba(255, 255, 255, 0.25) !important;
+    }
+    .team-card:hover .team-badge {
+      background-color: rgba(255, 255, 255, 0.18) !important;
+      color: #ffffff !important;
+      border-color: rgba(255, 255, 255, 0.3) !important;
+    }
+    .team-card:hover .team-tag {
+      background-color: #ffffff !important;
+      color: #712728 !important;
+    }
+    .team-card:hover .team-image {
+      transform: scale(1.04);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  
+    /* About & Team Text Color Strict Override (#191919) */
+    .about-content-text,
+    #team h2,
+    #team h3,
+    #team p:not(.team-tag):not(.eyebrow) {
+      color: #191919;
+    }
+    .team-card:hover h2,
+    .team-card:hover h3,
+    .team-card:hover p,
+    .team-card:hover span {
+      color: #ffffff !important;
+    }
+  </style>
+</head>
+<body id="top" class="antialiased selection:bg-burgundy selection:text-white bg-base text-charcoal">
+
+  <!-- Top Reading Progress Bar -->
+  <div id="progressBar" class="fixed top-0 left-0 right-0 h-[3px] bg-burgundy z-[70] pointer-events-none"></div>
+
+  <!-- Sticky Modern Navigation Bar -->
+  <header class="fixed z-50 top-0 inset-x-0 bg-base/90 backdrop-blur-md border-b border-charcoal/10 transition-all duration-300">
+    <nav class="max-w-[1540px] mx-auto px-5 sm:px-8 lg:px-12 h-[80px] flex items-center justify-between" aria-label="Main Navigation">
+      <!-- Brand Logo (Logo Primary) -->
+      <a href="index.html" class="flex items-center gap-3 group" aria-label="Identity spaces home">
+        <img src="./Logo/Logo Primary.png" alt="Identity spaces — Commercial Interior &amp; Fitout" class="h-12 md:h-14 w-auto object-contain hover:opacity-90 transition">
+      </a>
+
+      <!-- Desktop Navigation Links: Strictly Home, Services, Sectors, About, Portfolio, id homes, Identity Branding, Contact -->
+      <div class="hidden xl:flex items-center gap-6 2xl:gap-8 text-[12.5px] font-semibold tracking-wide text-charcoal">
+        <a class="line-link" href="index.html">Home</a>
+        <a class="line-link" href="index.html#services">Services</a>
+        <a class="line-link" href="index.html#sectors">Sectors</a>
+        <a class="nav-active font-bold text-burgundy" href="about.html" aria-current="page">About</a>
+        <a class="line-link text-black font-bold hover:opacity-75" href="portfolio.html" title="View Full Commercial Portfolio" style="color: #000000 !important;">Portfolio</a>
+        <a class="line-link" href="index.html#homes">id homes</a>
+        <a class="line-link" href="index.html#branding">Identity Branding</a>
+        <a class="line-link" href="index.html#contact">Contact</a>
+      </div>
+
+      <!-- Header CTAs -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="./Identity-Spaces-Brochure.pdf" download="Identity-Spaces-Brochure.pdf" 
+           class="inline-flex items-center gap-2 border border-charcoal/25 bg-transparent text-charcoal px-4 py-2.5 text-xs font-bold tracking-wider hover:border-burgundy hover:text-burgundy transition"
+           title="Download the official brochure">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span>Download Brochure</span>
+        </a>
+        <a href="index.html#contact" class="bg-burgundy text-white px-5 py-2.5 text-xs font-bold tracking-wider hover:bg-burgundy-hover transition-colors inline-flex items-center gap-1.5 shadow-sm">
+          <span>Get in Touch</span>
+          
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="menuBtn" type="button" class="xl:hidden p-2 text-charcoal hover:text-burgundy focus:outline-none" aria-label="Toggle navigation drawer" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg id="hamburgerIcon" class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="closeIcon" class="w-7 h-7 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Drawer Menu: Strictly Home, Services, Sectors, About, Portfolio, id homes, Identity Branding, Contact -->
+    <div id="mobileDrawer" class="hidden xl:hidden border-t border-charcoal/10 bg-base/98 backdrop-blur-lg px-6 py-8 shadow-2xl transition-all">
+      <div class="flex flex-col gap-3 text-sm font-semibold text-charcoal">
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html">Home</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#services">Core Services &amp; Scope</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#sectors">Sectors We Serve</a>
+        <a class="py-2 border-b border-charcoal/10 text-burgundy font-bold" href="about.html">About</a>
+        <a class="py-2 border-b border-charcoal/10 text-black font-bold hover:underline" href="portfolio.html" style="color: #000000 !important;">Portfolio (Selected Projects)</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#homes">id homes (Residential)</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#branding">Identity Branding Wing</a>
+        <a class="py-2 border-b border-charcoal/10 hover:text-burgundy" href="index.html#contact">Contact &amp; Studio Location</a>
+        <div class="pt-4 flex flex-col sm:flex-row gap-3">
+          <a href="./Identity-Spaces-Brochure.pdf" download="Identity-Spaces-Brochure.pdf" class="text-center border border-charcoal/30 py-3 text-xs font-bold tracking-wider hover:border-burgundy hover:text-burgundy">
+            Download Spaces Brochure (PDF) ↓
+          </a>
+          <a href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer" class="text-center bg-[#176b52] text-white py-3 text-xs font-bold tracking-wider hover:bg-[#104b3a]">
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero / Header Banner -->
+    <section class="pt-[120px] lg:pt-[150px] pb-16 lg:pb-24 border-b border-charcoal/10">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-12">
+        <div class="reveal">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class="eyebrow text-burgundy font-bold">ABOUT IDENTITY SPACES</span>
+            <span class="text-charcoal/30">/</span>
+            <span class="text-xs uppercase tracking-wider font-semibold text-charcoal/60">Calicut · Kerala</span>
+          </div>
+
+          <h1 class="display-font text-[clamp(2.6rem,5.5vw,5.6rem)] font-extrabold leading-[1.02] tracking-tight text-[#191919] max-w-[1100px]">
+            Spaces Designed with <em class="not-italic text-burgundy">purpose.</em>
+          </h1>
+
+          <p class="mt-6 text-base sm:text-lg lg:text-xl text-[#191919] max-w-[860px] leading-relaxed">
+            We are a multidisciplinary commercial interior design and turnkey fit-out practice. Based in Calicut, we bring architectural rigor, detailed 3D visualization, and accountable on-site execution under one seamless delivery model across Kerala.
+          </p>
+        </div>
+
+        <!-- Studio Metrics Strip -->
+        <div class="mt-14 pt-10 border-t border-charcoal/15 grid grid-cols-1 sm:grid-cols-3 gap-6 lg:gap-8 reveal">
+          <div>
+            <span class="display-font text-3xl lg:text-4xl font-extrabold text-charcoal block">100%</span>
+            <span class="text-xs uppercase tracking-wider font-bold text-charcoal/70 mt-1 block">Single-Point Accountability</span>
+          </div>
+          <div>
+            <span class="display-font text-3xl lg:text-4xl font-extrabold text-burgundy block">14</span>
+            <span class="text-xs uppercase tracking-wider font-bold text-charcoal/70 mt-1 block">Kerala Districts Covered</span>
+          </div>
+          <div>
+            <span class="display-font text-3xl lg:text-4xl font-extrabold text-charcoal block">On-Time</span>
+            <span class="text-xs uppercase tracking-wider font-bold text-charcoal/70 mt-1 block">Handover Guarantee</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Studio Narrative & Architectural Philosophy -->
+    <section class="py-16 lg:py-24 border-b border-charcoal/10 bg-base-light/40">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div class="lg:col-span-5 reveal">
+            <p class="eyebrow text-burgundy mb-3">Our Core Philosophy</p>
+            <h2 class="display-font text-3xl sm:text-4xl font-bold tracking-tight text-[#191919] leading-tight">
+              Bridging the gap between conceptual architecture &amp; turnkey reality.
+            </h2>
+            <div class="mt-6 space-y-4 text-sm sm:text-base text-[#191919] leading-relaxed" style="color: #191919 !important;">
+              <p>
+                Founded on the belief that commercial spaces should drive measurable business and human outcomes, Identity spaces operates as a unified interior and turnkey fit-out practice.
+              </p>
+              <p>
+                Too often, commercial fit-outs suffer from fragmented responsibility—where the conceptual designer, MEP contractor, and carpenters pull in opposite directions. We eliminate that friction by taking single-point accountability from the first schematic sketch to the final handover.
+              </p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+            <div class="p-8 bg-base-card border border-charcoal/15 rounded-sm">
+              <span class="eyebrow text-burgundy font-bold">01 / INTEGRATION</span>
+              <h3 class="display-font text-xl font-bold text-[#191919] mt-2 mb-3">Complete Turnkey Control</h3>
+              <p class="text-xs text-[#191919]/90 leading-relaxed">
+                Design consultancy, technical MEP documentation, 3D photorealistic visualization, and on-site fit-out execution under one clear contract.
+              </p>
+            </div>
+
+            <div class="p-8 bg-base-card border border-charcoal/15 rounded-sm">
+              <span class="eyebrow text-burgundy font-bold">02 / CRAFTSMANSHIP</span>
+              <h3 class="display-font text-xl font-bold text-[#191919] mt-2 mb-3">Material Rigor</h3>
+              <p class="text-xs text-[#191919]/90 leading-relaxed">
+                Sourcing hardwearing commercial-grade laminates, precision brass detailing, acoustic wall fabrics, and custom joinery engineered for heavy footfall.
+              </p>
+            </div>
+
+            <div class="p-8 bg-base-card border border-charcoal/15 rounded-sm">
+              <span class="eyebrow text-burgundy font-bold">03 / FUNCTIONALITY</span>
+              <h3 class="display-font text-xl font-bold text-[#191919] mt-2 mb-3">Human-Centric Flow</h3>
+              <p class="text-xs text-[#191919]/90 leading-relaxed">
+                Circulation pathing, acoustic privacy in clinics and boardrooms, ergonomic seating, and high-CRI lighting schemes tailored to each sector.
+              </p>
+            </div>
+
+            <div class="p-8 bg-base-card border border-charcoal/15 rounded-sm">
+              <span class="eyebrow text-burgundy font-bold">04 / TIMELINE GOVERNANCE</span>
+              <h3 class="display-font text-xl font-bold text-[#191919] mt-2 mb-3">Predictable Delivery</h3>
+              <p class="text-xs text-[#191919]/90 leading-relaxed">
+                Milestone-based project management, transparent BOQ breakdown, weekly progress reporting, and committed handover timelines across Kerala.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Company CEO and Employees Team Section -->
+    <section id="team" class="py-20 lg:py-28 border-b border-charcoal/10">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-12">
+        <div class="max-w-[780px] mb-14 lg:mb-20 reveal">
+          <p class="eyebrow text-burgundy mb-2">STUDIO LEADERSHIP &amp; SPECIALISTS</p>
+          <h2 class="display-font text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#191919]">
+            The Minds Behind Every Space
+          </h2>
+          <p class="text-sm sm:text-base text-[#191919] mt-4 leading-relaxed font-medium">
+            Meet the agile collective of visionary founders, operational leads, branding heads, developers, and interior designers orchestrating turnkey commercial excellence across Kerala.
+          </p>
+        </div>
+
+        <!-- 6 Team Cards Grid with Interactive Hover Inversion -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+
+          <!-- 1. MOHAMMED IHSAN - Founder and CEO -->
+          <article class="team-card bg-[#E7E6E1] border border-charcoal/15 p-6 sm:p-7 flex flex-col justify-between group cursor-pointer shadow-sm rounded-sm">
+            <div>
+              <div class="overflow-hidden aspect-[4/5] bg-charcoal/10 rounded-sm mb-6 relative">
+                <img src="./TEAM PIC/MOHAMMED IHSAN - Founder and CEO.png" 
+                     alt="MOHAMMED IHSAN — Founder and CEO, Identity spaces" 
+                     class="team-image w-full h-full object-cover object-top transition-transform duration-500">
+                <div class="absolute top-3 left-3">
+                  <span class="team-tag px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-charcoal text-white rounded-sm shadow transition-colors duration-300">
+                    Leadership · 01
+                  </span>
+                </div>
+              </div>
+              <p class="eyebrow text-burgundy font-bold tracking-wider mb-1">FOUNDER &amp; CEO</p>
+              <h3 class="display-font text-2xl font-bold text-[#191919] tracking-tight">MOHAMMED IHSAN</h3>
+              <p class="team-invert-text text-xs text-[#191919] mt-3 leading-relaxed">
+                Directing overall studio vision, architectural strategy, client partnerships, and master turnkey project governance across Kerala.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t team-border border-charcoal/15 flex items-center justify-between">
+              <span class="team-badge text-[11px] font-semibold px-2.5 py-1 bg-charcoal/5 text-[#191919] border border-charcoal/10 rounded-sm transition-colors duration-300">
+                Executive Studio Direction
+              </span>
+              <span class="team-invert-text text-sm font-bold text-burgundy group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </div>
+          </article>
+
+          <!-- 2. MUBASHEER.N - Co Founder and COO -->
+          <article class="team-card bg-[#E7E6E1] border border-charcoal/15 p-6 sm:p-7 flex flex-col justify-between group cursor-pointer shadow-sm rounded-sm">
+            <div>
+              <div class="overflow-hidden aspect-[4/5] bg-charcoal/10 rounded-sm mb-6 relative">
+                <img src="./TEAM PIC/MUBASHEER.N - Co Founder and COO.png" 
+                     alt="MUBASHEER.N — Co Founder and COO, Identity spaces" 
+                     class="team-image w-full h-full object-cover object-top transition-transform duration-500">
+                <div class="absolute top-3 left-3">
+                  <span class="team-tag px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-charcoal text-white rounded-sm shadow transition-colors duration-300">
+                    Leadership · 02
+                  </span>
+                </div>
+              </div>
+              <p class="eyebrow text-burgundy font-bold tracking-wider mb-1">CO FOUNDER &amp; COO</p>
+              <h3 class="display-font text-2xl font-bold text-[#191919] tracking-tight">MUBASHEER.N</h3>
+              <p class="team-invert-text text-xs text-[#191919] mt-3 leading-relaxed">
+                Spearheading operations, procurement, site management, subcontractor coordination, and strict quality assurance across all fit-outs.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t team-border border-charcoal/15 flex items-center justify-between">
+              <span class="team-badge text-[11px] font-semibold px-2.5 py-1 bg-charcoal/5 text-[#191919] border border-charcoal/10 rounded-sm transition-colors duration-300">
+                Turnkey Operations &amp; Fit-Out
+              </span>
+              <span class="team-invert-text text-sm font-bold text-burgundy group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </div>
+          </article>
+
+          <!-- 3. MUHAMMED NISAM - Branding Head -->
+          <article class="team-card bg-[#E7E6E1] border border-charcoal/15 p-6 sm:p-7 flex flex-col justify-between group cursor-pointer shadow-sm rounded-sm">
+            <div>
+              <div class="overflow-hidden aspect-[4/5] bg-charcoal/10 rounded-sm mb-6 relative">
+                <img src="./TEAM PIC/MUHAMMED NISAM - Branding Head.png" 
+                     alt="MUHAMMED NISAM — Branding Head, Identity spaces" 
+                     class="team-image w-full h-full object-cover object-top transition-transform duration-500">
+                <div class="absolute top-3 left-3">
+                  <span class="team-tag px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-charcoal text-white rounded-sm shadow transition-colors duration-300">
+                    Branding Wing · 03
+                  </span>
+                </div>
+              </div>
+              <p class="eyebrow text-burgundy font-bold tracking-wider mb-1">BRANDING HEAD</p>
+              <h3 class="display-font text-2xl font-bold text-[#191919] tracking-tight">MUHAMMED NISAM</h3>
+              <p class="team-invert-text text-xs text-[#191919] mt-3 leading-relaxed">
+                Leading brand strategy, identity design, and visual communication to transform business ideas into distinctive brand experiences.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t team-border border-charcoal/15 flex items-center justify-between">
+              <span class="team-badge text-[11px] font-semibold px-2.5 py-1 bg-charcoal/5 text-[#191919] border border-charcoal/10 rounded-sm transition-colors duration-300">
+                Identity &amp; Spatial Graphics
+              </span>
+              <span class="team-invert-text text-sm font-bold text-burgundy group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </div>
+          </article>
+
+          <!-- 4. MUHAMMED MINHAJ - Web Developer -->
+          <article class="team-card bg-[#E7E6E1] border border-charcoal/15 p-6 sm:p-7 flex flex-col justify-between group cursor-pointer shadow-sm rounded-sm">
+            <div>
+              <div class="overflow-hidden aspect-[4/5] bg-charcoal/10 rounded-sm mb-6 relative">
+                <img src="./TEAM PIC/MUHAMMED MINHAJ - Web Developer.png" 
+                     alt="MUHAMMED MINHAJ — Web Developer, Identity spaces" 
+                     class="team-image w-full h-full object-cover object-top transition-transform duration-500">
+                <div class="absolute top-3 left-3">
+                  <span class="team-tag px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-charcoal text-white rounded-sm shadow transition-colors duration-300">
+                    Digital Systems · 04
+                  </span>
+                </div>
+              </div>
+              <p class="eyebrow text-burgundy font-bold tracking-wider mb-1">WEB DEVELOPER</p>
+              <h3 class="display-font text-2xl font-bold text-[#191919] tracking-tight">MUHAMMED MINHAJ</h3>
+              <p class="team-invert-text text-xs text-[#191919] mt-3 leading-relaxed">
+                Crafting interactive digital experiences, digital portfolios, presentation technology, and the studio's digital infrastructure.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t team-border border-charcoal/15 flex items-center justify-between">
+              <span class="team-badge text-[11px] font-semibold px-2.5 py-1 bg-charcoal/5 text-[#191919] border border-charcoal/10 rounded-sm transition-colors duration-300">
+                Web Architecture &amp; UI/UX
+              </span>
+              <span class="team-invert-text text-sm font-bold text-burgundy group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </div>
+          </article>
+
+          <!-- 5. AMAL. AS - Jr. Interior Designer -->
+          <article class="team-card bg-[#E7E6E1] border border-charcoal/15 p-6 sm:p-7 flex flex-col justify-between group cursor-pointer shadow-sm rounded-sm">
+            <div>
+              <div class="overflow-hidden aspect-[4/5] bg-charcoal/10 rounded-sm mb-6 relative">
+                <img src="./TEAM PIC/AMAL. AS - Jr.Interior Designer.png" 
+                     alt="AMAL. AS — Jr. Interior Designer, Identity spaces" 
+                     class="team-image w-full h-full object-cover object-top transition-transform duration-500">
+                <div class="absolute top-3 left-3">
+                  <span class="team-tag px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-charcoal text-white rounded-sm shadow transition-colors duration-300">
+                    Design Team · 05
+                  </span>
+                </div>
+              </div>
+              <p class="eyebrow text-burgundy font-bold tracking-wider mb-1">JR. INTERIOR DESIGNER</p>
+              <h3 class="display-font text-2xl font-bold text-[#191919] tracking-tight">AMAL. AS</h3>
+              <p class="team-invert-text text-xs text-[#191919] mt-3 leading-relaxed">
+                Developing detailed spatial plans, 3D renderings, material boards, and custom architectural joinery drawings for turnkey fit-outs.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t team-border border-charcoal/15 flex items-center justify-between">
+              <span class="team-badge text-[11px] font-semibold px-2.5 py-1 bg-charcoal/5 text-[#191919] border border-charcoal/10 rounded-sm transition-colors duration-300">
+                Interior Design &amp; 3D Renders
+              </span>
+              <span class="team-invert-text text-sm font-bold text-burgundy group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </div>
+          </article>
+
+          <!-- 6. ARSHAD - Jr. Interior Designer -->
+          <article class="team-card bg-[#E7E6E1] border border-charcoal/15 p-6 sm:p-7 flex flex-col justify-between group cursor-pointer shadow-sm rounded-sm">
+            <div>
+              <div class="overflow-hidden aspect-[4/5] bg-charcoal/10 rounded-sm mb-6 relative">
+                <img src="./TEAM PIC/ARSHAD - Jr.Interior Designer.png" 
+                     alt="ARSHAD — Jr. Interior Designer, Identity spaces" 
+                     class="team-image w-full h-full object-cover object-top transition-transform duration-500">
+                <div class="absolute top-3 left-3">
+                  <span class="team-tag px-2.5 py-1 text-[10px] font-bold tracking-widest uppercase bg-charcoal text-white rounded-sm shadow transition-colors duration-300">
+                    Design Team · 06
+                  </span>
+                </div>
+              </div>
+              <p class="eyebrow text-burgundy font-bold tracking-wider mb-1">JR. INTERIOR DESIGNER</p>
+              <h3 class="display-font text-2xl font-bold text-[#191919] tracking-tight">ARSHAD</h3>
+              <p class="team-invert-text text-xs text-[#191919] mt-3 leading-relaxed">
+                Assisting in technical drafting, space planning calculations, CAD documentation, and on-site material measurement checks.
+              </p>
+            </div>
+            <div class="pt-6 mt-6 border-t team-border border-charcoal/15 flex items-center justify-between">
+              <span class="team-badge text-[11px] font-semibold px-2.5 py-1 bg-charcoal/5 text-[#191919] border border-charcoal/10 rounded-sm transition-colors duration-300">
+                CAD Drafting &amp; Space Planning
+              </span>
+              <span class="team-invert-text text-sm font-bold text-burgundy group-hover:translate-x-1 transition-transform">
+                →
+              </span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Studio Values & Standards -->
+    <section class="py-16 lg:py-24 border-b border-charcoal/10 bg-base-dark/20">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-12">
+        <div class="max-w-[700px] mb-12 reveal">
+          <p class="eyebrow text-burgundy mb-2">HOW WE OPERATE</p>
+          <h2 class="display-font text-3xl sm:text-4xl font-extrabold tracking-tight text-charcoal">
+            Principles We Stand By
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+          <div class="p-8 bg-base-card border border-charcoal/15">
+            <span class="text-3xl font-extrabold text-burgundy display-font">01</span>
+            <h3 class="display-font text-xl font-bold text-charcoal mt-3 mb-2">Zero Ambiguity</h3>
+            <p class="text-xs text-[#191919]/90 leading-relaxed">
+              Every detail is captured in comprehensive technical drawings, material spec sheets, and clear BOQ schedules prior to fabrication.
+            </p>
+          </div>
+
+          <div class="p-8 bg-base-card border border-charcoal/15">
+            <span class="text-3xl font-extrabold text-burgundy display-font">02</span>
+            <h3 class="display-font text-xl font-bold text-charcoal mt-3 mb-2">Uncompromising Site Supervision</h3>
+            <p class="text-xs text-[#191919]/90 leading-relaxed">
+              Our site engineers and design leads conduct daily on-site quality audits to ensure joinery, electrical, and plumbing strictly match specifications.
+            </p>
+          </div>
+
+          <div class="p-8 bg-base-card border border-charcoal/15">
+            <span class="text-3xl font-extrabold text-burgundy display-font">03</span>
+            <h3 class="display-font text-xl font-bold text-charcoal mt-3 mb-2">Enduring Value</h3>
+            <p class="text-xs text-[#191919]/90 leading-relaxed">
+              We design commercial spaces that perform reliably over years of high customer traffic, maintaining aesthetic dignity and structural resilience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Dedicated Project CTA Section -->
+    <section class="py-20 lg:py-28 bg-charcoal text-white">
+      <div class="max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-12 text-center reveal">
+        <p class="eyebrow text-burgundy-light mb-3">COMMENCE YOUR COMMERCIAL PROJECT</p>
+        <h2 class="display-font text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight max-w-[850px] mx-auto leading-tight">
+          Ready to build a commercial space that elevates your business?
+        </h2>
+        <p class="text-sm sm:text-base text-white/70 max-w-[650px] mx-auto mt-5 leading-relaxed">
+          From specialty healthcare clinics to flagship retail destinations and high-performance corporate offices, connect with our leadership team for a consultation.
+        </p>
+
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="portfolio.html" class="bg-white text-charcoal px-7 py-3.5 text-xs font-bold tracking-wider hover:bg-base transition inline-flex items-center gap-2 shadow-sm">
+            <span>Explore Commercial Portfolio</span>
+            
+          </a>
+          <a href="index.html#contact" class="bg-burgundy text-white px-7 py-3.5 text-xs font-bold tracking-wider hover:bg-burgundy-hover transition inline-flex items-center gap-2 shadow-sm">
+            <span>Book Studio Consultation</span>
+            
+          </a>
+          <a href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer" class="border border-white/30 text-white px-7 py-3.5 text-xs font-bold tracking-wider hover:border-white hover:bg-white/10 transition inline-flex items-center gap-2">
+            <span>Chat on WhatsApp</span>
+            
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Footer (Matching index.html and portfolio.html) -->
+  <footer class="bg-charcoal text-white px-6 sm:px-10 lg:px-16 pt-20 pb-10 border-t border-white/10">
+    <div class="max-w-[1540px] mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-16 border-b border-white/15">
+        <div>
+          <!-- Official Logo in Footer (Logo Primary White) -->
+          <div class="mb-4">
+            <img src="./Logo/Logo Primary White.png" alt="Identity spaces — Commercial Interior &amp; Fitout" class="h-12 md:h-14 w-auto object-contain">
+          </div>
+          <p class="text-white/60 text-sm mt-5 leading-relaxed">
+            Commercial Interior &amp; Turnkey Fit-out Studio.<br>
+            Calicut, Kerala · Serving Kerala.
+          </p>
+          <div class="mt-6 flex items-center gap-3">
+            <a href="https://www.instagram.com/identity__spaces" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/10 hover:bg-burgundy rounded transition" aria-label="Identity spaces Instagram (@identity__spaces)" title="@identity__spaces">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/id__homes_" target="_blank" rel="noopener noreferrer" class="p-2.5 bg-white/10 hover:bg-forest rounded transition" aria-label="id homes Instagram (@id__homes_)" title="id homes (@id__homes_)">
+              <svg class="w-4 h-4 fill-current text-forest-light" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="mailto:connect.idspaces@gmail.com" class="p-2.5 bg-white/10 hover:bg-burgundy rounded transition" aria-label="Identity spaces Email">
+              <svg class="w-4 h-4 fill-none stroke-current" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zM22 6l-10 7L2 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow text-burgundy-light mb-4">Quick Navigation</p>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li><a class="hover:text-white transition" href="index.html">Home</a></li>
+            <li><a class="hover:text-white transition text-burgundy-light font-bold" href="about.html">About</a></li>
+            <li><a class="hover:text-white transition" href="index.html#services">Core Services</a></li>
+            <li><a class="hover:text-white transition" href="index.html#sectors">Commercial Sectors</a></li>
+            <li><a class="hover:text-white transition" href="portfolio.html">Commercial Portfolio</a></li>
+            <li><a class="hover:text-white transition" href="./Identity-Spaces-Brochure.pdf" download="Identity-Spaces-Brochure.pdf">Download Spaces Brochure</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="eyebrow text-burgundy-light mb-4">Identity Family</p>
+          <ul class="space-y-2.5 text-sm text-white/70">
+            <li><a class="hover:text-white transition" href="index.html#homes">id homes (Residential)</a></li>
+            <li><a class="hover:text-white transition" href="https://www.instagram.com/id__homes_" target="_blank" rel="noopener noreferrer">id homes Instagram (@id__homes_)</a></li>
+            <li><a class="hover:text-white transition" href="index.html#branding">Identity Branding Wing</a></li>
+            <li><a class="hover:text-white transition" href="https://www.instagram.com/identity_branding" target="_blank" rel="noopener noreferrer">Identity Branding Instagram</a></li>
+            <li><a class="hover:text-white transition" href="./Identity-Branding-Brochure.pdf" download="Identity-Branding-Brochure.pdf">Branding Brochure PDF</a></li>
+            <li><a class="hover:text-white transition" href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer">WhatsApp Consultation</a></li>
+            <li><a class="hover:text-white transition" href="index.html#contact">Studio Location</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="eyebrow text-burgundy-light mb-4">Studio Office</p>
+          <address class="not-italic text-sm text-white/70 leading-relaxed space-y-1">
+            <p class="text-white font-medium">2nd Floor, AVM Building</p>
+            <p>West Hill, Calicut, Kerala 673005</p>
+            <p class="pt-1">
+              <a href="https://www.google.com/maps/place/identity+spaces/data=!4m7!3m6!1s0x4d56cdc5b748125f:0x7b95e1be429964c7!8m2!3d11.2813576!4d75.7713473!16s%2Fg%2F11ntgs1l5f!19sChIJXxJIt8XNVk0Rx2SZQr7hlXs?authuser=0&hl=en&g_ep=EgoyMDI2MTEwMy4wIJJjKgBIAVAD&rclk=1" 
+                 target="_blank" rel="noopener noreferrer" 
+                 class="inline-flex items-center gap-1 text-xs text-burgundy-light underline hover:text-white transition">
+                <span>View on Google Maps</span>
+              </a>
+            </p>
+            <p class="pt-2"><a href="tel:+918113815595" class="hover:text-white transition">+91 81138 15595</a></p>
+            <p><a href="tel:+918089112207" class="hover:text-white transition">+91 8089 11 22 07</a></p>
+            <p class="pt-1"><a href="mailto:connect.idspaces@gmail.com" class="text-xs text-burgundy-light underline">connect.idspaces@gmail.com</a></p>
+            <p><a href="mailto:connectidhomes@gmail.com" class="text-xs text-forest-light underline">connectidhomes@gmail.com</a></p>
+            <p><a href="https://www.instagram.com/identity_branding" target="_blank" rel="noopener noreferrer" class="text-xs text-[#a6c7bc] underline hover:text-white transition">@identity_branding</a></p>
+          </address>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/50 pt-8">
+        <span>&copy; <span id="year"></span> Identity spaces. All rights reserved.</span>
+        <span class="tracking-wide text-center font-medium">Spaces Designed with purpose</span>
+        <a href="#top" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;" class="hover:text-white transition font-semibold">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fixed Floating WhatsApp CTA Button (Bottom-Right) -->
+  <a href="https://wa.me/918113815595" target="_blank" rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-40 bg-[#25D366] hover:bg-[#20ba59] text-white p-3.5 rounded-full shadow-2xl flex items-center justify-center transition-transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-green-400/40" 
+     aria-label="Direct WhatsApp Chat with Identity spaces">
+    <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- Interactive Scripts -->
+  <script>
+    // Mobile Drawer Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const hamburgerIcon = document.getElementById('hamburgerIcon');
+    const closeIcon = document.getElementById('closeIcon');
+
+    if (menuBtn && mobileDrawer) {
+      menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileDrawer.classList.contains('hidden');
+        if (isOpen) {
+          mobileDrawer.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          mobileDrawer.classList.remove('hidden');
+          hamburgerIcon.classList.add('hidden');
+          closeIcon.classList.remove('hidden');
+          menuBtn.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      mobileDrawer.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileDrawer.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          menuBtn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+    // Scroll Progress Indicator
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const total = doc.scrollHeight - doc.clientHeight;
+      const progress = total > 0 ? (window.scrollY / total) : 0;
+      const bar = document.getElementById('progressBar');
+      if (bar) bar.style.transform = `scaleX(${progress})`;
+    }, { passive: true });
+
+    // Scroll Reveal Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Dynamic Year
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
